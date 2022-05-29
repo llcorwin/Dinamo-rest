@@ -1,0 +1,156 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    /* основний шрифт краще вибирати той який найчастіше зустрічається! */
+    /* по дефолту font style , font weight normal i 400 */
+    color: rgba(0, 0, 0, 0.6);
+    min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+    margin: 0;
+}
+
+ul, ol {
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+    transition: .3s;
+}
+
+.wrapper {
+    overflow: hidden;
+}
+
+.container {
+    max-width: 1440px;
+    /* на макеті додали 360+360+360 + відступи 30+30, також ми додаємо +30, бо є падінги по 15, щоб тест вміщався в контейнер */
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.hero {
+    background-image: url(./images/bg-image.jpg);
+    /* додали картинку */
+    
+    background-repeat: no-repeat;
+    /* властивість щоб картинка не повторялась */
+    background-size: cover;
+    /* властивість щоб картинка займала весь простір */
+    background-position: 50% 50%;
+    /* властивість яка при зменшенні розширення екрану буде зжимати зображення пропорційно */
+    /* можна написати background-position: center */
+    /* почитати за background size & position !!  */
+    /* ця структура застосовуюється для всіх фонових зображень */
+}
+
+.hero__wrap {
+    min-height: 100vh;
+    /* задали висоту нашого екрану. 100vh - повний екран, 50vh половина */
+    display: flex;
+    flex-direction: column;
+    /* ці два свойства, щоб спрацював flex-grow */
+}
+
+.hero__content {
+    flex-grow: 1;
+    /* це для того, щоб блок контенту займав весь подальшим об'єм зображення після header */
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero__caption {
+    font-family: Noto Sans, Arial, Helvetica, sans-serif;
+    font-size: 55px;
+    line-height: 70px;
+    font-weight: 900;
+    color: #fff;
+    max-width: 607px;
+    margin-bottom: 25px;
+    /* стилі з макету дан */
+}
+
+.hero__content {
+    flex-grow: 1;
+    /* це для того, щоб блок контенту займав весь подальшим об'єм зображення після header */
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+}
+
+.hero__desc {
+    margin-bottom: 25px;
+    color: #FFFFFF;
+    max-width: 501px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    
+}
+
+.hero__span {
+    color: #B82121;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.header__logo {
+    line-height: 0;
+}
+
+.header__logo-img {
+    max-width: 133px;
+    max-height: 66px;
+}
+
+.header__list {
+    display: flex;
+}
+
+.header__item {
+    padding: 0 60px;
+ /* стилі дан */
+}
+
+.header__link {
+    color: #fff;
+    font-weight: 500;
+    line-height: 22px;
+    font-size: 16px;
+    position: relative;
+    /* стилі дан */
+}
+
+.header__link::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 0;
+    bottom: -2px;
+    left: 0;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+.header__link:hover::after {
+    width: 100%;
+}
